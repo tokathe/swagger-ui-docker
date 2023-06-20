@@ -1,12 +1,12 @@
 {
-    "urls": [
-      {
-        "url": "./petstore.json",
-        "name": "Petstore API"
-      },
-      {
-        "url": "./weather.json",
-        "name": "Weather API"
-      }
-    ]
-  }
+  "urls": [
+    {
+      "url": "./petstore.json",
+      "name": "petstore api"
+    },
+    {
+      "url": "./weather.json",
+      "name": "weather api"
+    }
+  ]
+}
