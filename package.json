@@ -1,0 +1,17 @@
+{
+  "name": "swagger-ui-docker",
+  "version": "1.0.0",
+  "description": "Swagger UI with Docker example for multiple APIs",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "ts-node src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.5.3",
+    "typescript": "^5.1.3"
+  }
+}
