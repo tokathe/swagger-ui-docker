@@ -1,6 +1,6 @@
 
 import { resolve } from 'path';
-import { writeFileSync, readdirSync } from 'fs';
+import { writeFileSync, readdirSync, existsSync, mkdirSync } from 'fs';
 
 
 export type ConfigItem = {
@@ -17,7 +17,9 @@ export type SwaggerConfig = {
 const buildConfig = () => {
     const configFilename = 'swagger-config.json';
     const swaggerDocumentDirectory = resolve(__dirname,'../docs');
+    const buildDirectory = resolve(__dirname, '../dist');
     const swaggerDocumentFiles = readdirSync(swaggerDocumentDirectory).map((file) => file) || [];
+
 
     const configuration: SwaggerConfig = { urls: [] };
     configuration.urls = swaggerDocumentFiles.map((file) => {
@@ -27,7 +29,10 @@ const buildConfig = () => {
         }
     });
    
-    writeFileSync(resolve(__dirname, `../swagger/${configFilename}`), JSON.stringify(configuration, null, 2));
+    if(!existsSync(buildDirectory)){
+        mkdirSync(buildDirectory);
+    }
+    writeFileSync(resolve(__dirname, `../dist/${configFilename}`), JSON.stringify(configuration, null, 2));
     
 }
 
